@@ -1,0 +1,19 @@
+{
+  "name": "automation-tw-portal-server",
+  "version": "1.0.0",
+  "description": "Temporary backend server for distributed Android device orchestration.",
+  "main": "src/server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "simulate": "node simulator.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "ws": "^8.18.0"
+  }
+}

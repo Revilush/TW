@@ -1,0 +1,35 @@
+#Check command logs:
+open http://localhost:3000/logs/commands
+
+#Check orchestration state:
+open http://localhost:3000/orchestration/state
+
+# Ring:
+Invoke-RestMethod -Method Post -Uri "http://localhost:3000/devices/YOUR_DEVICE_ID/ring"
+
+#Automated flow:
+Invoke-RestMethod -Method Post -Uri "http://localhost:3000/orchestration/start"
+
+# Play YT:
+$body = @{
+  command = @{
+    type = "YT"
+    url = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+  }
+} | ConvertTo-Json -Depth 5
+
+Invoke-RestMethod -Method Post -Uri "http://localhost:3000/devices/YOUR_DEVICE_ID/commands" -ContentType "application/json" -Body $body
+
+#SMS:
+$body = @{
+  command = @{
+    type = "SMS"
+    phone_number = "TARGET_NUMBER"
+    message = "Test message from node"
+  }
+} | ConvertTo-Json -Depth 5
+
+Invoke-RestMethod -Method Post -Uri "http://localhost:3000/devices/YOUR_DEVICE_ID/commands" -ContentType "application/json" -Body $body
+
+
+# Call:

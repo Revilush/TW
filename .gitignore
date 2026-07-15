@@ -1,0 +1,41 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Android / Gradle
+.gradle/
+.gradle-user-home/
+local.properties
+**/build/
+**/dist/
+**/*.apk
+**/*.aab
+**/captures/
+
+# Android Studio / IntelliJ
+.idea/
+*.iml
+*.keystore
+*.jks
+*.p12
+
+# Local tooling / workspace metadata
+.agents/
+.claude/
+.cursor/
+skills-lock.json
+.env
+.env.*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary bootstrap artifacts
+android-node-app/gradle-8.7/
+android-node-app/gradle-8.7-bin.zip
+
+# Logs
+*.log
